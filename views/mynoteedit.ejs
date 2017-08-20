@@ -1,0 +1,103 @@
+  <!--npm install tinymce 안함-->
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="newest stylesheet" type="text/css" href="/stylesheets/skin.jaehee.css">
+  <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=aarowis1zd5nadqvwvxjbore86nea1u1vk5r765j4yf3xfa1"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/javascripts/ko.js"></script>
+  <script type="text/javascript">
+    tinymce.init({
+      selector: "#mytextarea",
+      paste_data_images: true,
+      plugins: [
+        "advlist autolink lists link image imagetools charmap print preview hr anchor pagebreak",
+        "searchreplace wordcount visualblocks visualchars code fullscreen",
+        "insertdatetime media nonbreaking save table contextmenu directionality",
+        "emoticons template paste textcolor colorpicker textpattern"
+      ],
+      //toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+      //toolbar2: "print preview media | forecolor backcolor emoticons | fontselect fontsizeselect",
+      toolbar: "fontselect | fontsizeselect | bold italic underline strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify | image media link | charmap bullist numlist table hr | superscript subscript | removeformat | preview newdocument | undo redo",
+      extended_valid_elements: "*",
+       toolbar_items_size: 'small',
+      width: 1200,
+      height: 500,
+      relative_urls: false,
+      remove_script_host: false,
+      branding: false,
+      autoresize_bottom_margin: 10,
+      statusbar: false,
+      paste_data_images: true,
+     paste_as_text: true,
+      paste_convert_word_fake_lists: false,
+      menubar: false,
+      forced_root_block: false,
+      image_advtab: true,
+      file_picker_callback: function(callback, value, meta) {
+        if (meta.filetype == 'image') {
+          $('#upload').trigger('click');
+          $('#upload').on('change', function() {
+            var file = this.files[0];
+            var reader = new FileReader();
+            reader.onload = function(e) {
+              callback(e.target.result, {
+                alt: ''
+              });
+            };
+            reader.readAsDataURL(file);
+          });
+        }
+      },
+    });
+    window.onload=function(){
+      var saveBtn = document.getElementById('savebtn');
+      saveBtn.onclick=function(){
+        tinyMCE.triggerSave();
+        var mcecontent = tinyMCE.activeEditor.getContent();
+        var data={
+          'tinymceContent' : mcecontent
+        }
+        $.ajax({
+          url: '/mynote/mynoteedit',
+          contentType:'application/x-www-form-urlencoded; charset=UTF-8',
+          cache:false,
+          dataType: 'json',
+          type: 'POST',
+          data: data,
+          success: function(result) {
+            alert('editor contents save success!');
+            console.log(result);
+            if(result['result']=='success'){
+              console.log('ajax success');
+              $(location).attr('href', 'http://35.167.132.166:3000/mynote/mynotemynotepage');
+            }
+
+          },
+          error: function(){
+            alert('editor contents save failed!');
+            console.log('ajax failed');
+          }
+        });
+      }
+
+    }
+  </script>
+</head>
+
+<body>
+  <div id="top">
+    <div id="logo">
+      <img src="/images/logo.png" alt="LOGO" />
+    </div>
+    <div id="editor">
+      <textarea name="" id="mytextarea" cols="30" rows="10">
+        <%= content %>
+      </textarea>
+      <input name="image" type="file" id="upload" class="hidden" onchange="">
+    <button id='savebtn'>save</button>
+    </div>
+  </div>
+</body>
+
+</html>

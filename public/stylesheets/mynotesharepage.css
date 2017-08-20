@@ -1,0 +1,157 @@
+body{
+  background-color: white;
+}
+#topBar{
+  border-bottom-style: groove;
+  padding-bottom: 15px;
+  margin-bottom: 5%;
+}
+#titleDiv{
+  display: inline-block;
+  font-size:25px;
+  font-family: monospace;
+  color:black;
+  margin-left: 10px;
+}
+#mypageBtn{
+  display: inline-block;
+  margin-left: 75%;
+}
+#setting{
+  display: inline-block;
+}
+#logoutDiv{
+  display: inline-block;
+}
+#entryDiv{
+  display: inline-block;
+}
+/*.topRight{
+  margin-bottom: 15%;
+}*/
+#goMypage{
+  font-size: 10px;
+  color:#d9d9d9;
+  border-style:none;
+  background-color: white;
+  outline:0;
+  cursor: pointer;
+}
+#goSetting{
+  font-size: 10px;
+  color:#d9d9d9;
+  border-style:none;
+  background-color: white;
+  outline:0;
+  cursor: pointer;
+}
+#logoutBtn{
+  font-size: 10px;
+  color:#d9d9d9;
+  border-style: none;
+  background-color: white;
+  outline:0;
+  cursor: pointer;
+}
+#entryBtn{
+  font-size: 10px;
+  color:#d9d9d9;
+  border-style: none;
+  background-color: white;
+  outline:0;
+  cursor: pointer;
+}
+
+#contentPart{
+  width:1073px;
+  margin : 0 auto;
+  /*border-style: groove;*/
+}
+.shareFolder{
+  width:200px;
+  height:100px;
+  /*margin-left: 10px;*/
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  background-color: #d9d9d9;
+  text-align: center;
+  cursor:pointer;
+  line-height: 97px;
+  color: white;
+  word-wrap: break-word;
+}
+#modal_showbox{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width:100%;
+  height:100%;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  overflow-y: auto;
+}
+#modal_window{
+  background-color: white;
+  width:900px;
+  height:1000px;
+  margin:0 auto;
+  /*text-align: center;*/
+  margin-top: 50px;
+  border-radius: 4px;
+}
+#backDiv{
+  display: inline-block;
+  margin-left: 87%;
+  margin-bottom: 1%;
+  margin-top : 1%;
+}
+#backBtn{
+  background-color: #bfbfbf;
+  border: none;
+  color: white;
+  text-decoration: none;
+  /*display: none;*/
+  cursor: pointer;
+  border-radius: 4px;
+  outline: 0;
+  width:50px;
+  height:22px;
+}
+#canBtn{
+  display: inline-block;
+  margin-top : 1%;
+}
+#canButton{
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 4px;
+  outline: 0;
+  width:50px;
+  height:22px;
+}
+#modalBtnDiv{
+  border-bottom-style: inset;
+}
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor:pointer;
+}
+#contentDiv{
+  margin-top:15px;
+}
+#contentView{
+  display: none;
+  margin-left: 20px;
+  margin-top: 20px;
+}

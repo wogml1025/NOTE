@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Page</title>
+    <link type='text/css' rel='stylesheet' href='/stylesheets/mynotemypage.css'/>
+  </head>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script src='/javascripts/mynotemypage.js'></script>
+  <body>
+    <div id='topBar'>
+      <div id='sharepageBtn'><button id='goSharepage' onclick='gotoShare()'>공유페이지</button></div>
+      <div id='setting'><button id='goSetting'>※</button></div>
+      <div id='logoutDiv'><button id='logoutBtn' onclick='goLogout()'>Logout</button></div>
+    </div>
+    <div id='mainPart'>
+      <div id='titleDiv'>MY NOTE</div>
+      <div id='makeFolder'><button id='makeFolderBtn' onclick='showTitleInput()'>새로 만들기</button></div>
+      <div id='shareBtn'><button id='toShare'>＃</button></div>
+      <!-- <div id='searchBtnDiv'><button id='searchBtn'><img id='searchIcon' src='/images/search.png'/></button></div> -->
+      <div id='searchDiv'><input id='folderSearch' type='text' placeholder='search'/></div>
+      <div id='filePart'>
+          <% for(var i=0; i<folders.length; i++){ %>
+            <div class='folderInDB' onmousedown='delFolder(this,event)'><%= folders[i].foldername %></div>
+          <% } %>
+      </div>
+    </div>
+    <div id="modal_box">
+      <div id="close_modal"><span class="close" onclick='hideTitleInput()'>&times;</span></div>
+      <div id="modal_msg">
+        <div id='folderTitleDiv'><input type='text' id='folderTitleInput' placeholder="폴더 제목 입력"/></div>
+        <div id='titleSetDiv'><button id='titleSetBtn' onclick='makeFolder()'>OK</button></div>
+      </div>
+    </div>
+
+    <div id="shareOrDeleteModal">
+      <div id="close_share_delete_modal"><span class="close" onclick='hidesdModal()'>&times;</span></div>
+      <div id="btnMsg">
+        <div id='shareDiv'><button id='sBtn'>공유</button></div>
+        <div id='deleteDiv'><button id='dBtn'>삭제</button></div>
+        <div id='cancelDiv'><button id='cBtn' onclick='hidesdModal()'>취소</button></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link type='text/css' rel='stylesheet' href='/stylesheets/mynotesharepage.css'/>
+  </head>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script src='/javascripts/mynotesharepage.js'></script>
+
+  <body>
+    <div id='topBar'>
+      <div id='titleDiv'>MY NOTE</div>
+      <div id='mypageBtn' class='topRight'><button id='goMypage' onclick='goMypage()'>마이페이지</button></div>
+      <div id='setting' class='topRight'><button id='goSetting'>※</button></div>
+      <div id='logoutDiv' class='topRight'><button id='logoutBtn'>Logout</button></div>
+      <div id='entryDiv' class='topRight'><button id='entryBtn' onclick='goEntrypage()'>회원가입</button></div>
+    </div>
+    <div id='contentPart'>
+      <% for(var i=0;i<content.length;i++){ %>
+        <div class='shareFolder' onclick='openFolder(this)'><%= content[i].foldername %></div>
+      <% } %>
+    </div>
+
+    <div id="modal_showbox">
+      <div id="close_modal2"><span class="close" onclick='closeFolder()'>&times;</span></div>
+      <div id="modal_window">
+        <div id='modalBtnDiv'>
+          <div id='backDiv'><button id='backBtn' onclick='closeContent()' disabled>Back</button></div>
+          <div id='canBtn'><button id='canButton' onclick='closeFolder()'>cancel</button></div>
+        </div>
+        <div id='contentDiv'></div>
+        <div id='contentView'>
+          <div id='showContent'></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

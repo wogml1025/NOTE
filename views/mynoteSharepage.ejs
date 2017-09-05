@@ -11,11 +11,13 @@
 
   <body>
     <div id='topBar'>
-      <div id='titleDiv'>MY NOTE</div>
-      <div id='mypageBtn' class='topRight'><button id='goMypage' onclick='goMypage()'>마이페이지</button></div>
-      <div id='setting' class='topRight'><button id='goSetting'>※</button></div>
-      <div id='logoutDiv' class='topRight'><button id='logoutBtn'>Logout</button></div>
-      <div id='entryDiv' class='topRight'><button id='entryBtn' onclick='goEntrypage()'>회원가입</button></div>
+      <div id='titleDiv'><img src='/images/logo.png' id='title' onclick='goMypage()'/></div>
+      <!-- <div id='mypageBtn' class='topRight'><button id='goMypage' onclick='goMypage()'>마이페이지</button></div> -->
+      <!-- <div id='setting' class='topRight'><button id='goSetting' onclick='showloginModal()'>※</button></div> -->
+      <div id='shareSearchDiv'><input type='text' id='shareSearchInput' placeholder='search'/></div>
+      <div id='setting' class='topRight'><img src='/images/setting.png' id='goSetting' onclick='showloginModal()'/></div>
+      <!-- <div id='logoutDiv' class='topRight'><button id='logoutBtn'>Logout</button></div> -->
+      <!-- <div id='entryDiv' class='topRight'><button id='entryBtn' onclick='goEntrypage()'>회원가입</button></div> -->
     </div>
     <div id='contentPart'>
       <% for(var i=0;i<content.length;i++){ %>
@@ -36,5 +38,17 @@
         </div>
       </div>
     </div>
+
+    <div id='loginModal'>
+      <div><span class="close" onclick='closeloginModal()'>&times;</span></div>
+      <div id='login'>
+        <div id='loginTitle'><img src='/images/logo.png' id='modaltitle'/></div>
+        <div id='loginDivmodal'><button id='loginBtn' onclick='goLoginpage()'>로그인</button></div>
+        <div id='modalEntryDiv'><button id='modalEntryBtn' onclick='goEntrypage()'>회원가입</button></div>
+        <div id='canDivmodal'><button id='canBtn2' onclick='closeloginModal()'>취소</button></div>
+      </div>
+    </div>
+
+
   </body>
 </html>

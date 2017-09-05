@@ -10,12 +10,20 @@
   <body>
     <div id='allform'>
       <div id='loginform'>
-        <div id='loginTitle'>My Note</div>
-        <div id='inputEmail'><input type='text' name='email' id='login_id' placeholder="E-Mail"/></div>
-        <div id='inputPwd'><input type='password' name='pwd' id='login_pwd' placeholder='Password'/></div>
-        <div id='goEntry' onclick='goEntryPage()'>회원가입</div>
-        <div id='loginButton'><button id='loginBtn'>Login</button></div>
-        <button id="facebook" class="loginBtn loginBtn--facebook" onclick='goFacebook()'>Login with Facebook</button>
+        <div id='loginTitle'><img src='/images/logo.png' id='title'/></div>
+        <div id='inputEmail'><input type='text' name='email' id='login_id' placeholder="이메일"/></div>
+        <div id='inputPwd'><input type='password' name='pwd' id='login_pwd' placeholder='비밀번호'/></div>
+        <div id="or_">
+          <div id="or_line" class="or"><hr></div>
+          <div id="or_text"><p>또는</p></div>
+          <div id="or_line2" class="or"><hr></div>
+        </div>
+        <div id='fbDiv'></div>
+        <div id='loginButton'>
+          <button id='fbButton' onclick='goFacebook()'>Facebook으로 로그인</button>
+          <button id='loginBtn'>로그인</button>
+        </div>
+        <div id='goEntry' onclick='goEntryPage()'><button id='entryBtn'>가입하기</button></div>
         <div id='sharepageDiv'><button id='sharepageBtn' onclick='gotoShare()'>공유페이지</button></div>
       </div>
     </div>

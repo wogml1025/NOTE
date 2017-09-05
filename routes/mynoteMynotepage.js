@@ -11,7 +11,7 @@ router.get('/mynotemynotepage', function(req, res, next) {
   //res.send('respond with a resource mynote page');
   var sql = 'select foldername from mynotefolder where nickname=?;';
   var sql2 ='select notename from note where nickname=? and foldername=?;';
-  console.log(req.session);
+  //console.log(req.session);
   if(req.session.authId){
     console.log('Note page open');
     conn.query(sql2,[req.session.nick,req.session.foldername],function(error,results,fields){
@@ -21,7 +21,7 @@ router.get('/mynotemynotepage', function(req, res, next) {
       }
       else{
         console.log('Note page open success');
-        console.log('results',results);
+        //console.log('results',results);
         res.render('mynoteMynotepage', {
           title: 'mynoteMynotepage',
           foldername : req.session.foldername,
@@ -48,7 +48,7 @@ router.post('/addnote',function(req,res,next){
       console.log('add note fail in server');
     }
     else{
-      console.log(results);
+      //console.log(results);
       console.log(fields);
       console.log('add note success in server');
       res.send({result:'success'});
@@ -67,7 +67,7 @@ router.post('/deletenoteInDB',function(req,res,next){
       console.log('delete noteInDB fail in server');
     }
     else{
-      console.log(results);
+      //console.log(results);
       console.log(fields);
       console.log('delete noteInDB success in server');
       res.send({result:'success'});
@@ -112,6 +112,7 @@ router.post('/goeditpage',function(req,res,next){
       console.log('go edit page error');
     }
     else{
+      console.log(results);
       req.session.content = results[0].content;
       req.session.save(function(){
         console.log('go edit page success');
@@ -121,6 +122,34 @@ router.post('/goeditpage',function(req,res,next){
   });//query
 });
 
+router.post('/searchnote',function(req,res,next){
+  var searchtext = req.body.searchText;
+  var nickname = req.session.nick;
+  var foldername = req.session.foldername;
+  var likeQuery = '%'+searchtext+'%';
+  var sql = 'select notename from note where nickname=? and foldername=? and notename like ?;';
+  conn.query(sql,[nickname,foldername,likeQuery],function(error,results,fields){
+    if(error){
+      console.log(error);
+      console.log('note search error');
+    }
+    else{
+      var searchResult = results[0];
+      if(searchResult){
+        console.log('note search success and it exists');
+        console.log(searchtext);
+        for(var i=0;i<results.length;i++){
+          console.log(results[i].notename);
+        }
+        res.send({result:'success',notes:results});
+      }
+      else{
+        console.log('note search success but it does not exist');
+        res.send({result:'fail',notes:results});
+      }
+    }
+  });
+});//router post
 //module.exports = router;
 return router;
 }

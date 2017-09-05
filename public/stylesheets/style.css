@@ -1,8 +1,96 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+body{
+  overflow: hidden;
 }
 
-a {
-  color: #00B7FF;
+#top img{
+  display: inline-block;
+  margin-bottom: 30px;
+}
+#logoImg{
+  width:80px;
+  height:30px;
+}
+#savebtn {
+    width: 80px;
+    height: 30px;
+    position: fixed;
+    right: 40px;
+    top: 30px;
+    cursor: pointer;
+}
+/* 에디터 부분 */
+#border{
+  position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 100px;
+    background-color: black;
+    border: 1px solid black;
+}
+.hidden{/* 이미지 파일선택 */
+  display: none;
+}
+/* 테두리없애고 가운데정렬*/
+#mceu_40 {
+  border: none;
+width: 80%;
+min-width: 480px;
+margin: 0 auto;
+display: table;
+padding-top: 10px;
+}
+/*<!--[if IE]>
+.content {
+    display: block;
+    text-align: center;
+    }
+.content div {
+    display: inline;
+    zoom: 1;
+}
+<![endif]-->*/
+/* 툴바 가운데정렬 */
+#mceu_29-body{
+    text-align: center;
+}
+#editor{/* 에디터 가운데 정렬 */
+  margin: 0 auto;
+  width: 1200px;
+}
+/* 이미지툴 적용버튼 */
+/* 이미지툴 저장버튼 */
+.mce-primary button{
+  color: black !important;
+}
+.mce-panel{
+  background-color: white !important;
+}
+.mce-btn{
+  background-color: white !important;
+  border: none !important;
+}
+#mceu_0-open .mce-caret{
+  display: none !important;
+}
+#mceu_1-open .mce-caret{
+  display: none !important;
+}
+span .mce-txt{
+  text-align: center !important;
+}
+#mceu_0-open .mce-txt{
+text-align : center !important;
+}
+#mceu_1-open .mce-txt{
+  text-align : center !important;
+  width: 60px !important;
+  }
+#mceu_59-button .mce-txt{
+  color: black;
+}
+#mceu_84-button .mce-txt{
+  color: black;
+}
+#mceu_27{
+  border: none;
 }

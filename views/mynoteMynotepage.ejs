@@ -9,12 +9,13 @@
   <script src='/javascripts/mynotemynotepage.js'></script>
   <body>
     <div id='topBar'>
-      <div id='titleDiv' onclick='goMypage()'>MY NOTE</div>
+      <div id='titleDiv' onclick='goMypage()'><img src='/images/logo.png' id='title'/></div>
       <div id='makeNote'><button id='makeNoteBtn' onclick='showTitleInput()'>노트 만들기</button></div>
       <div id='searchDiv'><input id='noteSearch' type='text' placeholder='search'/></div>
-      <div id='sharepageBtn'><button id='goSharepage' onclick='gotoShare()'>공유페이지</button></div>
-      <div id='setting'><button id='goSetting'>※</button></div>
-      <div id='logoutDiv'><button id='logoutBtn' onclick='goLogout()'>Logout</button></div>
+      <div id='sharepageBtn'><button id='goSharepage' onclick='gotoShare()'>SHARE</button></div>
+      <!-- <div id='setting'><button id='goSetting' onclick='showSetting()'>※</button></div> -->
+      <div id='setting'><img src='/images/setting.png' id='goSetting' onclick='showSetting()'/></div>
+      <!-- <div id='logoutDiv'><button id='logoutBtn' onclick='goLogout()'>Logout</button></div> -->
     </div>
     <div id='mainPart'>
       <div id='filePart'>
@@ -48,9 +49,17 @@
     <div id="shareOrDeleteModal">
       <div id="close_share_delete_modal"><span class="close" onclick='hidesdModal()'>&times;</span></div>
       <div id="btnMsg">
-        <div id='shareDiv'><button id='sBtn'>공유</button></div>
+        <!-- <div id='shareDiv'><button id='sBtn'>공유</button></div> -->
         <div id='deleteDiv'><button id='dBtn'>삭제</button></div>
         <div id='cancelDiv'><button id='cBtn' onclick='hidesdModal()'>취소</button></div>
+      </div>
+    </div>
+
+    <div id='settingModal'>
+      <div><span class="close" onclick='hideSetting()'>&times;</span></div>
+      <div id='settingMsg'>
+        <div id='logoutDiv'><button id='logoutBtn' onclick='goLogout()'>로그아웃</button></div>
+        <div id='canSettingDiv'><button id='canSettingBtn' onclick='hideSetting()'>닫기</button></div>
       </div>
     </div>
 

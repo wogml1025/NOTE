@@ -1,40 +1,7 @@
 body{
   background-color: white;
 }
-#sharepageBtn{
-  display: inline-block;
-  margin-left: 87%;
-}
-#setting{
-  display: inline-block;
-}
-#logoutDiv{
-  display: inline-block;
-}
-#goSharepage{
-  font-size: 10px;
-  color:#d9d9d9;
-  border-style:none;
-  background-color: white;
-  outline:0;
-  cursor: pointer;
-}
-#goSetting{
-  font-size: 10px;
-  color:#d9d9d9;
-  border-style:none;
-  background-color: white;
-  outline:0;
-  cursor: pointer;
-}
-#logoutBtn{
-  font-size: 10px;
-  color:#d9d9d9;
-  border-style: none;
-  background-color: white;
-  outline:0;
-  cursor: pointer;
-}
+
 #mainPart{
   width:580px;
   margin:0 auto;
@@ -42,25 +9,31 @@ body{
 }
 #titleDiv{
   display: inline-block;
-  font-size:37px;
-  font-family: monospace;
-  color:black;
   margin-top : 50px;
   margin-left: 10px;
 }
+#title{
+  width: 130px;
+  height: 60px;
+}
 #makeFolder{
   display: inline-block;
-  margin-left: 20px;
+  margin-left: 5.5%;
+  vertical-align: 37%;
 }
 #makeFolderBtn{
-  font-size:10px;
-  color:#d9d9d9;
-  outline:0;
-  border-style: none;
-  background-color: white;
+  background-color: #595959;
+  border: none;
+  color: white;
+  text-decoration: none;
   cursor: pointer;
+  border-radius: 2px;
+  outline: 0;
+  font-size: 10px;
+  width:70px;
+  height:22px;
 }
-#shareBtn{
+/*#shareBtn{
   display: inline-block;
 }
 #toShare{
@@ -70,15 +43,60 @@ body{
   border-style: none;
   background-color: white;
   cursor: pointer;
-}
+}*/
 #searchDiv{
   display: inline-block;
+  vertical-align: 35%;
 }
 #folderSearch{
-  width:268px;
+  width:199px;
+  height: 20px;
   text-align: center;
+  border-radius: 2px;
+  border:none;
+  background-color: #d9d9d9;
+  outline: 0;
 }
+#sharepageBtn{
+  display: inline-block;
+  vertical-align: 37%;
+}
+#goSharepage{
+  background-color: #d9d9d9;
+  border: none;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 2px;
+  outline: 0;
+  font-size: 10px;
+  width:50px;
+  height:22px;
+}
+#setting{
+  display: inline-block;
+  vertical-align: 15%;
 
+  width:22px;
+  height:22px;
+  border-radius: 2px;
+  border: none;
+  background-color: #d9d9d9;
+}
+#goSetting{
+  /*background-color: #d9d9d9;*/
+  border: none;
+  /*color: black;
+  text-decoration: none;*/
+  cursor: pointer;
+  /*border-radius: 2px;
+  outline: 0;
+  font-size: 10px;*/
+  width:17px;
+  height:17px;
+  padding-left: 2px;
+  padding-top: 2px;
+}
 #filePart{
   margin-top:20px;
 }
@@ -124,7 +142,7 @@ body{
   height:45px;
   margin:0 auto;
   text-align: center;
-  margin-top: 200px;
+  margin-top: 20%;
   border-radius: 4px;
   padding-top: 17px;
 }
@@ -161,6 +179,7 @@ body{
   line-height: 125px;
   color: white;
   word-wrap: break-word;
+  border-radius: 2px;
 }
 /*#searchBtnDiv{
   display: inline-block;
@@ -201,8 +220,8 @@ body{
   height:45px;
   margin:0 auto;
   text-align: center;
-  margin-top: 200px;
-  padding-top: 13px;
+  margin-top: 20%;
+  padding-top: 15px;
   border-radius: 4px;
 }
 #shareDiv{
@@ -241,6 +260,60 @@ body{
     height:25px;
 }
 #cBtn{
+  background-color: #008CBA;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 4px;
+    outline: 0;
+    width:50px;
+    height:25px;
+}
+
+#settingModal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width:100%;
+  height:100%;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+#settingMsg{
+  background-color: white;
+  width:200px;
+  height:45px;
+  margin:0 auto;
+  text-align: center;
+  margin-top: 20%;
+  padding-top: 15px;
+  border-radius: 4px;
+}
+#logoutDiv{
+  display: inline-block;
+}
+#logoutBtn{
+  background-color: #008CBA;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 4px;
+    outline: 0;
+    width:80px;
+    height:25px;
+}
+#canSettingDiv{
+  display: inline-block;
+}
+#canSettingBtn{
   background-color: #008CBA;
     border: none;
     color: white;

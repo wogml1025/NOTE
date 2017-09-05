@@ -2,7 +2,7 @@ body{
   background-color: #f2f2f2;
 }
 #allform{
-  margin-top: 60px;
+  margin-top: 5%;
 }
 #Entryform{
   width:320px;
@@ -14,11 +14,11 @@ body{
 /*#loginform div{
   margin-bottom: 10px;
 }*/
-#EntryTitle{
-  font-size: 50px;
-  font-weight: lighter;
-  color:#d9d9d9;
-  margin-bottom: 33px;
+#title{
+  width:150px;
+  height:60px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 #Entryform input{
   width:250px;
@@ -26,10 +26,22 @@ body{
   border:1px solid #d9d9d9;
   margin-bottom: 10px;
 }
-#goEntry{
+/*#goEntry{
   font-size: 17px;
   color:#d9d9d9;
   margin-bottom: 10px;
   margin-top:20px;
   cursor: pointer;
+}*/
+#entryBtn{
+  border-style: none;
+  background-color: #8c8c8c;
+  width:255px;
+  height:35px;
+  font-size: 12px;
+  font-weight: normal;
+  color:white;
+  cursor: pointer;
+  outline: 0;
+  margin-top: 30px;
 }

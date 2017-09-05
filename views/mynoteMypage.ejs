@@ -8,17 +8,18 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script src='/javascripts/mynotemypage.js'></script>
   <body>
-    <div id='topBar'>
-      <div id='sharepageBtn'><button id='goSharepage' onclick='gotoShare()'>공유페이지</button></div>
-      <div id='setting'><button id='goSetting'>※</button></div>
+    <!-- <div id='topBar'>
       <div id='logoutDiv'><button id='logoutBtn' onclick='goLogout()'>Logout</button></div>
-    </div>
+    </div> -->
     <div id='mainPart'>
-      <div id='titleDiv'>MY NOTE</div>
+      <div id='titleDiv'><img src='/images/logo.png' id='title'/></div>
       <div id='makeFolder'><button id='makeFolderBtn' onclick='showTitleInput()'>새로 만들기</button></div>
-      <div id='shareBtn'><button id='toShare'>＃</button></div>
+      <!-- <div id='shareBtn'><button id='toShare'>＃</button></div> -->
       <!-- <div id='searchBtnDiv'><button id='searchBtn'><img id='searchIcon' src='/images/search.png'/></button></div> -->
       <div id='searchDiv'><input id='folderSearch' type='text' placeholder='search'/></div>
+      <div id='sharepageBtn'><button id='goSharepage' onclick='gotoShare()'>SHARE</button></div>
+      <!-- <div id='setting'><button id='goSetting' onclick='showSetting()'>※</button></div> -->
+      <div id='setting'><img src='/images/setting.png' id='goSetting' onclick='showSetting()'/></div>
       <div id='filePart'>
           <% for(var i=0; i<folders.length; i++){ %>
             <div class='folderInDB' onmousedown='delFolder(this,event)'><%= folders[i].foldername %></div>
@@ -39,6 +40,14 @@
         <div id='shareDiv'><button id='sBtn'>공유</button></div>
         <div id='deleteDiv'><button id='dBtn'>삭제</button></div>
         <div id='cancelDiv'><button id='cBtn' onclick='hidesdModal()'>취소</button></div>
+      </div>
+    </div>
+
+    <div id='settingModal'>
+      <div><span class="close" onclick='hideSetting()'>&times;</span></div>
+      <div id='settingMsg'>
+        <div id='logoutDiv'><button id='logoutBtn' onclick='goLogout()'>로그아웃</button></div>
+        <div id='canSettingDiv'><button id='canSettingBtn' onclick='hideSetting()'>닫기</button></div>
       </div>
     </div>
   </body>

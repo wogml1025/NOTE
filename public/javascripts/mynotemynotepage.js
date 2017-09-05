@@ -1,9 +1,67 @@
 var filecount=0;
 
 $(document).ready(function(){
+  var noteInDB = document.getElementsByClassName('noteInDB');
+  $('#noteSearch').bind('input propertychange',function(){
+    var searchText = document.getElementById('noteSearch').value;
+    var data = {
+      'searchText' : searchText
+    }
+    $.ajax({
+      type:'POST',
+      url:'/mynote/searchnote',
+      contentType:'application/x-www-form-urlencoded; charset=UTF-8',
+      cache:false,
+      dataType:'json',
+      data:data,
+      success:function(result){
+        var flag = [];
 
+        for(var i=0;i<noteInDB.length;i++){
+          flag[i] = 0;
+        }
 
-});
+        for(var i=0;i<noteInDB.length;i++){
+          //noteInDB[i].style.color='white';
+          noteInDB[i].style.display='inline-block';
+        }
+
+        if(result['result']=='success'){
+          var noteResult = result['notes'];
+          for(var i=0;i<noteResult.length;i++){
+            var noteIndex = noteResult[i].notename;
+            for(var j=0; j<noteInDB.length;j++){
+              if(noteIndex == noteInDB[j].innerText){
+                flag[j] = 1;
+              }//if
+            }//inner for
+          }//for
+
+          if(searchText!=''){
+            for(var i=0;i<noteInDB.length;i++){
+              if(flag[i]!=1){
+                //noteInDB[i].style.color='black';
+                noteInDB[i].style.display='none';
+              }//if
+            }//for
+          }//if
+          else{//searchText value is null
+            for(var i=0;i<noteInDB.length;i++){
+              //noteInDB[i].style.color='white';
+              noteInDB[i].style.display='inline-block';
+            }
+          }
+
+        }//if
+
+      },
+      error:function(error){
+        console.log(error);
+      }
+    });//ajax {}
+
+  });//bind {}
+});//ready {}
 
 function goLogout(){
   $(location).attr('href','http://35.167.132.166:3000/mynote/mynotemypage/logout');
@@ -22,8 +80,8 @@ function makeNote(){
   else{
     //div.innerHTML = document.getElementById('fileSample');
     div.id = 'myNote'+filecount;
-    div.style.width='100px';
-    div.style.height='100px';
+    div.style.width='150px';
+    div.style.height='150px';
 
     //div.style.marginLeft ='10px';
     div.style.marginRight='10px';
@@ -36,9 +94,10 @@ function makeNote(){
     div.style.textAlign='center';
     div.style.cursor='pointer';
     //div.style.verticalAlign='middle';
-    div.style.lineHeight='90px';
+    div.style.lineHeight='140px';
     div.style.color='white';
     div.style.wordWrap = 'break-word';
+    div.style.borderRadius = '2px';
     //ajax db insert part
     var data={
       'notename' : div.textContent
@@ -120,6 +179,39 @@ function hideEditModal(){
 function hidesdModal(){
   document.getElementById('shareOrDeleteModal').style.display='none';
 }
+function showSetting(){
+  document.getElementById('settingModal').style.display='block';
+}
+function hideSetting(){
+  document.getElementById('settingModal').style.display='none';
+}
+/* 원래 있던 함수 */
+// function goEditPage(){
+//   // $(location).attr('href','http://35.167.132.166:3000/mynote/mynoteedit');
+//   var data = {
+//     'contents' : document.getElementById('contentDiv').innerHTML
+//   }
+//   $.ajax({
+//     type:'POST',
+//     url:'/mynote/goeditpage',
+//     contentType:'application/x-www-form-urlencoded; charset=UTF-8',
+//     cache:false,
+//     dataType:'json',
+//     data:data,
+//     success:function(result){
+//       console.log(result);
+//       if(result['result'] = 'success'){
+//         console.log('success to open edit page');
+//         //alert(window.location.href);
+//         $(location).attr('href','http://35.167.132.166:3000/mynote/mynoteedit');
+//       }
+//     },
+//     error:function(error){
+//       console.log(error);
+//       console.log('failed to open edit page');
+//     }
+//   });
+// }
 function goEditPage(){
   // $(location).attr('href','http://35.167.132.166:3000/mynote/mynoteedit');
   var data = {
@@ -136,6 +228,7 @@ function goEditPage(){
       console.log(result);
       if(result['result'] = 'success'){
         console.log('success to open edit page');
+        //alert(window.location.href);
         $(location).attr('href','http://35.167.132.166:3000/mynote/mynoteedit');
       }
     },
@@ -145,6 +238,7 @@ function goEditPage(){
     }
   });
 }
+
 function gotoShare(){
   $(location).attr('href','http://35.167.132.166:3000/mynote/mynotesharepage');
 }
@@ -188,14 +282,14 @@ function delNote(obj,e){
       event.preventDefault();
       //////////////////////////
       document.getElementById('shareOrDeleteModal').style.display='block';
-      var shareBtn = document.getElementById('sBtn');
+      //var shareBtn = document.getElementById('sBtn');
       var delBtn = document.getElementById('dBtn');
       //var obj = event.target.className;
-      shareBtn.onclick = function(){
-        //ajax send to share page
-        alert('share');
-        /////////////////////////
-      }//shareBtn function {}
+      // shareBtn.onclick = function(){
+      //   //ajax send to share page
+      //   alert('share');
+      //   /////////////////////////
+      // }//shareBtn function {}
 
       delBtn.onclick = function(){
         for(var i=0; i<noteClass.length; i++){

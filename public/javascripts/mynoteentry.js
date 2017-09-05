@@ -78,7 +78,7 @@ $(document).ready(function(){
     });
   });
 
-  $('#goEntry').click(function(){
+  $('#entryBtn').click(function(){
     var flag=1;
     var new_name = $('#entry_name').val();
     var new_email = $('#entry_email').val();

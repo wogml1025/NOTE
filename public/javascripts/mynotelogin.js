@@ -28,9 +28,12 @@ $(document).ready(function(){
       data:data,
       success:function(result){
         console.log(result);
-        if(result.status == 200){
+        if(result['result']=='success'){
           //self.isEditMode(!self.isEditMode());
           console.log('login start');
+        }
+        else{
+          alert('login fail !');
         }
       },
       error:function(error){

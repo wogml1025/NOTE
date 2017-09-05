@@ -8,54 +8,78 @@ body{
 }
 #titleDiv{
   display: inline-block;
-  font-size:25px;
-  font-family: monospace;
-  color:black;
   margin-left: 10px;
+  margin-top: 5px;
 }
-#mypageBtn{
+#title{
+  width:80px;
+  height:30px;
+  cursor: pointer;
+}
+/*#mypageBtn{
   display: inline-block;
   margin-left: 75%;
+  vertical-align: 20%;
+}*/
+#shareSearchDiv{
+  display: inline-block;
+  margin-left: 75%;
+  vertical-align: 35%;
+}
+#shareSearchInput{
+  text-align: center;
+  border-radius: 2px;
+  height: 20px;
+  background-color: #d9d9d9;
+  border: none;
+  outline: 0;
 }
 #setting{
   display: inline-block;
+  vertical-align: 7%;
 }
-#logoutDiv{
+/*#logoutDiv{
   display: inline-block;
-}
-#entryDiv{
+  vertical-align: 20%;
+}*/
+/*#entryDiv{
   display: inline-block;
-}
+  vertical-align: 20%;
+}*/
 /*.topRight{
   margin-bottom: 15%;
 }*/
-#goMypage{
+/*#goMypage{
   font-size: 10px;
   color:#d9d9d9;
   border-style:none;
   background-color: white;
   outline:0;
   cursor: pointer;
-}
+}*/
 #goSetting{
-  font-size: 10px;
-  color:#d9d9d9;
-  border-style:none;
   background-color: white;
-  outline:0;
+  border: none;
+  /*color: black;
+  text-decoration: none;*/
   cursor: pointer;
+  border-radius: 2px;
+  outline: 0;
+  /*font-size: 10px;*/
+  width:22px;
+  height:22px;
 }
-#logoutBtn{
+/*#logoutBtn{
   font-size: 10px;
   color:#d9d9d9;
   border-style: none;
   background-color: white;
   outline:0;
   cursor: pointer;
-}
+}*/
 #entryBtn{
   font-size: 10px;
-  color:#d9d9d9;
+  /*color:#d9d9d9;*/
   border-style: none;
   background-color: white;
   outline:0;
@@ -63,7 +87,7 @@ body{
 }
 
 #contentPart{
-  width:1073px;
+  width:85%;
   margin : 0 auto;
   /*border-style: groove;*/
 }
@@ -81,6 +105,7 @@ body{
   line-height: 97px;
   color: white;
   word-wrap: break-word;
+  border-radius: 2px;
 }
 #modal_showbox{
   display: none;
@@ -154,4 +179,81 @@ body{
   display: none;
   margin-left: 20px;
   margin-top: 20px;
+}
+
+#loginModal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width:100%;
+  height:100%;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+#login{
+  background-color: white;
+  width: 300px;
+  height: 350px;
+  margin:0 auto;
+  text-align: center;
+  margin-top: 7%;
+  /*border-radius: 4px;*/
+  padding-top: 20px;
+}
+
+#loginDivmodal{
+  /*display: inline-block;*/
+}
+
+#modaltitle{
+  width:150px;
+  height:60px;
+  margin-top: 30px;
+  margin-bottom: 70px;
+}
+
+#loginBtn{
+  border-style: none;
+  background-color: #595959;
+  width:255px;
+  height:35px;
+  font-size: 12px;
+  font-weight: normal;
+  color:white;
+  cursor: pointer;
+  outline: 0;
+  margin-bottom: 10px;
+  border-radius: 2px;
+}
+#modalEntryBtn{
+  border-style: none;
+  background-color: #595959;
+  width:255px;
+  height:35px;
+  font-size: 12px;
+  font-weight: normal;
+  color:white;
+  cursor: pointer;
+  outline: 0;
+  margin-bottom: 10px;
+  border-radius: 2px;
+}
+/*#canDivmodal{
+  display: inline-block;
+}*/
+#canBtn2{
+  border-style: none;
+  background-color: #595959;
+  width:255px;
+  height:35px;
+  font-size: 12px;
+  font-weight: normal;
+  color:white;
+  cursor: pointer;
+  outline: 0;
+  margin-bottom: 10px;
+  border-radius: 2px;
 }

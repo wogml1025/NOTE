@@ -21,28 +21,40 @@ router.post('/mynotelogin',function(req,res,next){
   var user_email = req.body.email;
   var user_password = req.body.password;
 
-  var sql = 'SELECT * FROM mynoteuser WHERE email=?';
-  conn.query(sql,[user_email],function(error,results,fields){
+  var sql = 'SELECT * FROM mynoteuser WHERE email=? and password=?;';
+  conn.query(sql,[user_email,user_password],function(error,results,fields){
     if(error){
       console.log(error);
     }
     else{
       var user = results[0];
-      if(user_password == user.password){
-        console.log('same password');
-        req.session.authId = user_email;
-        req.session.nick = user.nickname;
-        req.session.save(function(){
-          console.log('login success');
-          console.log(user.nickname);
-        });
+      // if(user_password == user.password){
+      //   console.log('same password');
+      //   req.session.authId = user_email;
+      //   req.session.nick = user.nickname;
+      //   req.session.save(function(){
+      //     console.log('login success');
+      //     console.log(user.nickname);
+      //     res.send({result:'success'});
+      //   });
+      // }
+      if(user){
+          console.log('same password');
+          req.session.authId = user_email;
+          req.session.nick = user.nickname;
+          req.session.save(function(){
+            console.log('login success');
+            console.log(user.nickname);
+            res.send({result:'success'});
+          });
       }
       else{
         console.log('login fail');
+        res.send({result:'fail'});
       }
     }
   });
-  res.end('{"success" : "Updated Successfully","status" : 200}');
+  //res.end('{"success" : "Updated Successfully","status" : 200}');
 });
 //module.exports = router;
 return router;

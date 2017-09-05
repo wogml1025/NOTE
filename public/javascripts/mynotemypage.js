@@ -1,83 +1,64 @@
 var filecount=0;
 
 $(document).ready(function(){
+  var folderInDB = document.getElementsByClassName('folderInDB');
+  $('#folderSearch').bind('input propertychange',function(){
+    var folderSearch = $('#folderSearch').val();
+    var data = {
+      'searchFolder' : folderSearch
+    }
+    $.ajax({
+      type:'POST',
+      url:'/mynote/searchfolder',
+      contentType:'application/x-www-form-urlencoded; charset=UTF-8',
+      cache:false,
+      dataType:'json',
+      data:data,
+      success:function(result){
+        var flag=[];
+        for(var i=0;i<folderInDB.length;i++){
+          flag[i] = 0;
+        }
 
-  // $('.folderInDB').bind('contextmenu',function(event){
-  //   event.preventDefault();
-  //   //////////////////////////
-  //   var folderClass = document.getElementsByClassName('folderInDB');
-  //   document.getElementById('shareOrDeleteModal').style.display='block';
-  //   var shareBtn = document.getElementById('sBtn');
-  //   var delBtn = document.getElementById('dBtn');
-  //   //var obj = event.target.className;
-  //   shareBtn.onclick = function(){
-  //     //ajax send to share page
-  //     for(var i=0; i<folderClass.length; i++){
-  //       if(obj.innerText == folderClass[i].innerText){
-  //         //ajax delete part
-  //           var data={
-  //             'foldername' : folderClass[i].innerText
-  //           }
-  //           $.ajax({
-  //             type:'POST',
-  //             url:'/mynote/sharefolder',
-  //             contentType:'application/x-www-form-urlencoded; charset=UTF-8',
-  //             cache:false,
-  //             dataType:'json',
-  //             data:data,
-  //             success:function(result){
-  //               alert('share folder success');
-  //               console.log(result);
-  //               if(result['result']=='success'){
-  //                 console.log('folderInDB share success');
-  //               }
-  //             },
-  //             error:function(error){
-  //               alert('folderDB share failed!');
-  //             }
-  //           });
-  //           /////////////
-  //           document.getElementById('shareOrDeleteModal').style.display='none';
-  //         }//if {}
-  //
-  //       }//for {}
-  //     /////////////////////////
-  //   }//shareBtn function {}
-  //
-  //   delBtn.onclick = function(){
-  //     for(var i=0; i<folderClass.length; i++){
-  //       if(obj.innerText == folderClass[i].innerText){
-  //         //ajax delete part
-  //           var data3={
-  //             'foldername3' : folderClass[i].innerText
-  //           }
-  //           $.ajax({
-  //             type:'POST',
-  //             url:'/mynote/deletefolderInDB',
-  //             contentType:'application/x-www-form-urlencoded; charset=UTF-8',
-  //             cache:false,
-  //             dataType:'json',
-  //             data:data3,
-  //             success:function(result){
-  //               alert('delete folderDB success');
-  //               console.log(result);
-  //               if(result['result']=='success'){
-  //                 console.log('folderInDB delete success');
-  //               }
-  //             },
-  //             error:function(error){
-  //               alert('folderDB delete failed!');
-  //             }
-  //           });
-  //           /////////////
-  //           folderClass[i].parentNode.removeChild(obj);
-  //           document.getElementById('shareOrDeleteModal').style.display='none';
-  //         }//if {}
-  //
-  //       }//for {}
-  //   }//delBtn function {}
-  //   //////////////////////////
-  // }); //bind {}
+        for(var i=0;i<folderInDB.length;i++){
+          //folderInDB[i].style.color='white';
+          folderInDB[i].style.display='inline-block';
+        }
+
+        if(result['result']=='success'){
+          var folders = result['folder'];
+          for(var i=0;i<folders.length;i++){
+            var folderResult = folders[i].foldername;
+            for(var j=0;j<folderInDB.length;j++){
+              if(folderResult == folderInDB[j].innerText){
+                flag[j] = 1;
+              }
+            }//inner for
+          }//for
+
+          if(folderSearch!=''){
+            for(var i=0;i<folderInDB.length;i++){
+              if(flag[i]!=1){
+                //folderInDB[i].style.color='black';
+                folderInDB[i].style.display='none';
+              }//if
+            }//for
+          }//if
+          else{//folderSearch value is null
+            for(var i=0;i<folderInDB.length;i++){
+              //folderInDB[i].style.color='white';
+              folderInDB[i].style.display='inline-block';
+            }
+          }
+
+        }//if
+
+      },
+      error:function(error){
+        console.log(error);
+      }
+    });
+  });
 });//ready {}
 
 function goLogout(){
@@ -107,6 +88,7 @@ function makeFolder(){
     div.style.lineHeight='125px';
     div.style.color='white';
     div.style.wordWrap = 'break-word';
+    div.style.borderRadius = '2px';
     //ajax db insert part
     var data={
       'foldername' : div.textContent
@@ -220,6 +202,12 @@ function hideTitleInput(){
 }
 function hidesdModal(){
   document.getElementById('shareOrDeleteModal').style.display='none';
+}
+function showSetting(){
+  document.getElementById('settingModal').style.display='block';
+}
+function hideSetting(){
+  document.getElementById('settingModal').style.display='none';
 }
 function gotoShare(){
   $(location).attr('href','http://35.167.132.166:3000/mynote/mynotesharepage');

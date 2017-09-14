@@ -37,6 +37,6 @@ router.post('/mynoteedit',function(req,res,next){
 
 });
 
-//module.exports = router;
+module.exports = router;
 return router;
 }

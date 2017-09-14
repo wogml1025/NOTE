@@ -212,31 +212,35 @@ function hideSetting(){
 //     }
 //   });
 // }
+// function goEditPage(){
+//   // $(location).attr('href','http://35.167.132.166:3000/mynote/mynoteedit');
+//   var data = {
+//     'contents' : document.getElementById('contentDiv').innerHTML
+//   }
+//   $.ajax({
+//     type:'POST',
+//     url:'/mynote/goeditpage',
+//     contentType:'application/x-www-form-urlencoded; charset=UTF-8',
+//     cache:false,
+//     dataType:'json',
+//     data:data,
+//     success:function(result){
+//       console.log(result);
+//       if(result['result'] = 'success'){
+//         console.log('success to open edit page');
+//         //alert(window.location.href);
+//         $(location).attr('href','http://35.167.132.166:3000/mynote/mynoteedit');
+//       }
+//     },
+//     error:function(error){
+//       console.log(error);
+//       console.log('failed to open edit page');
+//     }
+//   });
+// }
 function goEditPage(){
-  // $(location).attr('href','http://35.167.132.166:3000/mynote/mynoteedit');
-  var data = {
-    'contents' : document.getElementById('contentDiv').innerHTML
-  }
-  $.ajax({
-    type:'POST',
-    url:'/mynote/goeditpage',
-    contentType:'application/x-www-form-urlencoded; charset=UTF-8',
-    cache:false,
-    dataType:'json',
-    data:data,
-    success:function(result){
-      console.log(result);
-      if(result['result'] = 'success'){
-        console.log('success to open edit page');
-        //alert(window.location.href);
-        $(location).attr('href','http://35.167.132.166:3000/mynote/mynoteedit');
-      }
-    },
-    error:function(error){
-      console.log(error);
-      console.log('failed to open edit page');
-    }
-  });
+  //folder이름 note이름 받아서 http://35.167.132.166:3000/mynote/[nickname]/[foldername]/[notename] 이렇게
+
 }
 
 function gotoShare(){

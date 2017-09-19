@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MyNote Login Page</title>
+    <link type='text/css' rel='stylesheet' href='/stylesheets/mynoteloginpage.css'/>
+  </head>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script src='/javascripts/mynotelogin.js'></script>
+  <script>
+  //window.onload=function(){
+    function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI();
+    } else {
+      // The person is not logged into your app or we are unable to tell.
+      console.log('Please log '+'into this app.')
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1514688058591802',
+    cookie     : true,  // enable cookies to allow the server to access
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.8' // use graph api version 2.8
+  });
+
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      var data={
+        fbid : response.id,
+        fbname : response.name
+      }
+      $.ajax({
+        type:'POST',
+        url:'/mynote/fblogin',
+        contentType:'application/x-www-form-urlencoded; charset=UTF-8',
+        cache:false,
+        dataType:'json',
+        data:data,
+        success:function(result){
+          if(result['result']=='success'){
+            $(location).attr('href', 'http://34.209.115.97:3000/mynote/mynotemypage');
+          }
+        },
+        error:function(error){
+          alert('fb login failed!');
+        }
+      });
+    });
+  }
+  //}
+  </script>
+  <body>
+    <div id='allform'>
+      <div id='loginform'>
+        <div id='loginTitle'><img src='/images/logo.png' id='title'/></div>
+        <div id='inputEmail'><input type='text' name='email' id='login_id' placeholder="이메일"/></div>
+        <div id='inputPwd'><input type='password' name='pwd' id='login_pwd' placeholder='비밀번호'/></div>
+        <div id="or_">
+          <div id="or_line" class="or"><hr></div>
+          <div id="or_text"><p>또는</p></div>
+          <div id="or_line2" class="or"><hr></div>
+        </div>
+        <div id='fbDiv'></div>
+        <div id='loginButton'>
+          <!-- <button id='fbButton'>Facebook으로 로그인</button> -->
+          <button id='loginBtn'>로그인</button>
+        </div>
+        <div id='goEntry' onclick='goEntryPage()'><button id='entryBtn'>가입하기</button></div>
+        <div id='sharepageDiv'><button id='sharepageBtn' onclick='gotoShare()'>공유페이지</button></div>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.10";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <div class="fb-login-button" data-width="255" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onlogin='checkLoginState()'></div>
+      </div>
+    </div>
+  </body>
+  </html>

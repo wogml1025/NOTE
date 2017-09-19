@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Page</title>
+    <link type='text/css' rel='stylesheet' href='/stylesheets/mynotemynotepage.css'/>
+  </head>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script src='/javascripts/mynotemynotepage.js'></script>
+  <body>
+    <div id='topBar'>
+      <div id='titleDiv' onclick='goMypage()'><img src='/images/logo.png' id='title'/></div>
+      <div id='makeNote'><button id='makeNoteBtn' onclick='showTitleInput()'>노트 만들기</button></div>
+      <div id='searchDiv'><input id='noteSearch' type='text' placeholder='search'/></div>
+      <div id='sharepageBtn'><button id='goSharepage' onclick='gotoShare()'>SHARE</button></div>
+      <!-- <div id='setting'><button id='goSetting' onclick='showSetting()'>※</button></div> -->
+      <div id='setting'><img src='/images/setting.png' id='goSetting' onclick='showSetting()'/></div>
+      <!-- <div id='logoutDiv'><button id='logoutBtn' onclick='goLogout()'>Logout</button></div> -->
+    </div>
+    <div id='mainPart'>
+      <div id='filePart'>
+          <div id='folderPart'><%= foldername %></div>
+          <div id='notePart'>
+            <% for(var i=0;i<note.length;i++){ %>
+              <div class='noteInDB' onmousedown='delNote(this,event)'><%= note[i].notename %></div>
+              <% } %>
+          </div>
+      </div>
+    </div>
+    <div id="modal_box">
+      <div id="close_modal"><span class="close" onclick='hideTitleInput()'>&times;</span></div>
+      <div id="modal_msg">
+        <div id='noteTitleDiv'><input type='text' id='noteTitleInput' placeholder="노트 제목 입력"/></div>
+        <div id='titleSetDiv'><button id='titleSetBtn' onclick='makeNote()'>OK</button></div>
+      </div>
+    </div>
+
+    <div id="modal_showbox">
+      <div id="close_modal2"><span class="close" onclick='hideEditModal()'>&times;</span></div>
+      <div id="modal_window">
+        <div id='modalBtnDiv'>
+          <div id='editBtn'><button id='editButton' onclick='goEditPage()'>edit</button></div>
+          <div id='canBtn'><button id='canButton' onclick='hideEditModal()'>cancel</button></div>
+        </div>
+        <div id='contentDiv'></div>
+      </div>
+    </div>
+
+    <div id="shareOrDeleteModal">
+      <div id="close_share_delete_modal"><span class="close" onclick='hidesdModal()'>&times;</span></div>
+      <div id="btnMsg">
+        <!-- <div id='shareDiv'><button id='sBtn'>공유</button></div> -->
+        <div id='deleteDiv'><button id='dBtn'>삭제</button></div>
+        <div id='cancelDiv'><button id='cBtn' onclick='hidesdModal()'>취소</button></div>
+      </div>
+    </div>
+
+    <div id='settingModal'>
+      <div><span class="close" onclick='hideSetting()'>&times;</span></div>
+      <div id='settingMsg'>
+        <div id='logoutDiv'><button id='logoutBtn' onclick='goLogout()'>로그아웃</button></div>
+        <div id='canSettingDiv'><button id='canSettingBtn' onclick='hideSetting()'>닫기</button></div>
+      </div>
+    </div>
+
+  </body>
+</html>

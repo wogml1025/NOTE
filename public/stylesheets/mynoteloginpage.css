@@ -1,0 +1,100 @@
+body{
+  background-color: #f2f2f2;
+}
+#allform{
+  margin-top: 5%;
+}
+#loginform{
+  width:320px;
+  height:500px;
+  margin:0 auto;
+  background-color: white;
+  text-align: center;
+}
+/*#loginform div{
+  margin-bottom: 10px;
+}*/
+/*#loginTitle{
+  font-size: 50px;
+  font-weight: lighter;
+  color:#d9d9d9;
+  margin-bottom: 33px;
+}*/
+#title{
+  width:150px;
+  height:60px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+#or_text{
+  display: inline-block;
+  font-size: 10px;
+  margin-bottom: 20px;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+#or_{
+  /*margin-left: 13px;*/
+}
+.or{
+  vertical-align: middle;
+  display: inline-block;
+  width:110px;
+}
+#loginform input{
+  width:250px;
+  height: 30px;
+  border:1px solid #d9d9d9;
+  margin-bottom: 10px;
+}
+
+#fbButton {
+  margin-bottom: 40px;
+  width: 255px;
+  height: 35px;
+  border: none;
+  /*border-radius: 2px;*/
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  transition: 0.2s ease;
+  cursor: pointer;
+  background: #32508E;
+}
+
+#loginBtn{
+  border-style: none;
+  background-color: #131339;
+  width:255px;
+  height:35px;
+  font-size: 12px;
+  font-weight: normal;
+  color:white;
+  cursor: pointer;
+  outline: 0;
+  margin-bottom: 10px;
+}
+#entryBtn{
+  border-style: none;
+  background-color: #8c8c8c;
+  width:255px;
+  height:35px;
+  font-size: 12px;
+  font-weight: normal;
+  color:white;
+  cursor: pointer;
+  outline: 0;
+  margin-bottom: 10px;
+}
+#sharepageBtn{
+  border-style: none;
+  background-color: #001a00;
+  width:255px;
+  height:35px;
+  font-size: 12px;
+  font-weight: normal;
+  color:white;
+  cursor: pointer;
+  outline: 0;
+  margin-bottom: 30px;
+}

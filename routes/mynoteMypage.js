@@ -41,7 +41,10 @@ router.get('/mynotemypage/logout',function(req,res,next){
   delete req.session.foldername;
   delete req.session.notename;
   delete req.session.content;
+<<<<<<< HEAD
   delete req.session.backimage;
+=======
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
   req.session.save(function(){
     res.redirect('/mynote/mynotelogin');
   });
@@ -190,6 +193,7 @@ router.post('/searchfolder',function(req,res,next){
   });//query
 });
 
+<<<<<<< HEAD
 router.post('/setfolderimage',function(req,res,next){
   var foldername = req.session.foldername;
   var nickname = req.session.nick;
@@ -221,6 +225,8 @@ router.post('/setfolderimage',function(req,res,next){
   });
 });
 
+=======
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
 //module.exports = router;
 return router;
 }

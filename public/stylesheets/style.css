@@ -9,8 +9,11 @@ body{
 #logoImg{
   width:80px;
   height:30px;
+<<<<<<< HEAD
   margin-left: 10px;
   margin-top: 5px;
+=======
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
 }
 #savebtn {
     width: 80px;
@@ -41,6 +44,7 @@ margin: 0 auto;
 display: table;
 padding-top: 10px;
 }
+<<<<<<< HEAD
 
 /*//////////////*/
 #testDiv{
@@ -49,6 +53,8 @@ padding-top: 10px;
 /*//////////////*/
 
 
+=======
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
 /*<!--[if IE]>
 .content {
     display: block;
@@ -67,6 +73,14 @@ padding-top: 10px;
   margin: 0 auto;
   width: 1200px;
 }
+<<<<<<< HEAD
+=======
+/* 이미지툴 적용버튼 */
+/* 이미지툴 저장버튼 */
+.mce-primary button{
+  color: black !important;
+}
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
 .mce-panel{
   background-color: white !important;
 }
@@ -99,6 +113,9 @@ text-align : center !important;
 #mceu_27{
   border: none;
 }
+<<<<<<< HEAD
 .mce-primary button{
   color: black !important;
 }
+=======
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b

@@ -5,8 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-var passport = require('passport');
-var FacebookStrategy = require('passport-facebook').Strategy;
+//var passport = require('passport');
+//var FacebookStrategy = require('passport-facebook').Strategy;
 
 var MySQLStore = require('express-mysql-session')(session);
 var options={

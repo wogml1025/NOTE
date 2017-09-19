@@ -211,6 +211,7 @@ body{
 #modal_window{
   background-color: white;
   width:900px;
+<<<<<<< HEAD
   height:700px;
   margin:0 auto;
   /*text-align: center;*/
@@ -244,6 +245,15 @@ body{
 }
 /*############################*/
 
+=======
+  height:1000px;
+  margin:0 auto;
+  /*text-align: center;*/
+  margin-top: 50px;
+  border-radius: 4px;
+  overflow: scroll;
+}
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
 #modalBtnDiv{
   border-bottom-style: inset;
 }
@@ -295,6 +305,7 @@ body{
   color: white;
   word-wrap: break-word;
   border-radius: 2px;
+<<<<<<< HEAD
 
   opacity: 1;
 	-webkit-transition: .3s ease-in-out;
@@ -303,6 +314,8 @@ body{
 .noteInDB:hover{
   opacity: 0.5;
   color:black;
+=======
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
 }
 
 #shareOrDeleteModal{

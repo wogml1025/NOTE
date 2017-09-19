@@ -53,6 +53,7 @@ window.onload=function(){
       }
     });//ajax
   });//bind
+<<<<<<< HEAD
 
   var data2={
     'sharefolderimage' : 'setImage'
@@ -91,6 +92,17 @@ function goMypage(){
 }
 function goLoginpage(){
   $(location).attr('href','http://34.209.115.97:3000/mynote/mynotelogin');
+=======
+}
+function goEntrypage(){
+  $(location).attr('href','http://35.167.132.166:3000/mynote/mynoteentry');
+}
+function goMypage(){
+  $(location).attr('href','http://35.167.132.166:3000/mynote/mynotemypage');
+}
+function goLoginpage(){
+  $(location).attr('href','http://35.167.132.166:3000/mynote/mynotelogin');
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
 }
 
 function openFolder(obj) {
@@ -323,5 +335,9 @@ function closeloginModal(){
   document.getElementById('loginModal').style.display='none';
 }
 function goLogout(){
+<<<<<<< HEAD
   $(location).attr('href','http://34.209.115.97:3000/mynote/mynotemypage/logout');
+=======
+  $(location).attr('href','http://35.167.132.166:3000/mynote/mynotemypage/logout');
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
 }

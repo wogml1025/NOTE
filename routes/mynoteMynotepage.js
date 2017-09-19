@@ -112,6 +112,10 @@ router.post('/goeditpage',function(req,res,next){
       console.log('go edit page error');
     }
     else{
+<<<<<<< HEAD
+=======
+      console.log(results);
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
       req.session.content = results[0].content;
       req.session.save(function(){
         console.log('go edit page success');
@@ -149,6 +153,7 @@ router.post('/searchnote',function(req,res,next){
     }
   });
 });//router post
+<<<<<<< HEAD
 
 router.post('/setimage',function(req,res,next){
   var backimg = req.session.backimage;
@@ -183,6 +188,8 @@ router.post('/setimage',function(req,res,next){
   });
 });
 
+=======
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
 //module.exports = router;
 return router;
 }

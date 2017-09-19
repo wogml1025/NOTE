@@ -57,6 +57,7 @@ $(document).ready(function(){
       error:function(error){
         console.log(error);
       }
+<<<<<<< HEAD
     });//ajax
   });//bind
 
@@ -93,6 +94,14 @@ $(document).ready(function(){
 
 function goLogout(){
   $(location).attr('href','http://34.209.115.97:3000/mynote/mynotemypage/logout');
+=======
+    });
+  });
+});//ready {}
+
+function goLogout(){
+  $(location).attr('href','http://35.167.132.166:3000/mynote/mynotemypage/logout');
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
 }
 function makeFolder(){
   var div = document.createElement('div');
@@ -137,7 +146,11 @@ function makeFolder(){
           console.log('folder insert success');
           location.reload();
         }
+<<<<<<< HEAD
         //$(location).attr('href','http://34.209.115.97:3000/mynote/mynotelogin');
+=======
+        //$(location).attr('href','http://35.167.132.166:3000/mynote/mynotelogin');
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
       },
       error:function(error){
         alert('folder insert failed!');
@@ -164,7 +177,11 @@ function makeFolder(){
               if(result['result']=='success'){
                 console.log('shift to Notepage success with foldername');
               }
+<<<<<<< HEAD
               $(location).attr('href','http://34.209.115.97:3000/mynote/mynotemynotepage');
+=======
+              $(location).attr('href','http://35.167.132.166:3000/mynote/mynotemynotepage');
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
             },
             error:function(error){
               console.log('shift to Notepage failed with foldername');
@@ -240,7 +257,11 @@ function hideSetting(){
   document.getElementById('settingModal').style.display='none';
 }
 function gotoShare(){
+<<<<<<< HEAD
   $(location).attr('href','http://34.209.115.97:3000/mynote/mynotesharepage');
+=======
+  $(location).attr('href','http://35.167.132.166:3000/mynote/mynotesharepage');
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
 }
 function delFolder(obj,e){
   var fileDiv = document.getElementById('filePart');
@@ -267,7 +288,11 @@ function delFolder(obj,e){
             if(result['result']=='success'){
               console.log('shift to Notepage success with foldername');
             }
+<<<<<<< HEAD
             $(location).attr('href','http://34.209.115.97:3000/mynote/mynotemynotepage');
+=======
+            $(location).attr('href','http://35.167.132.166:3000/mynote/mynotemynotepage');
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
           },
           error:function(error){
             console.log('shift to Notepage failed with foldername');

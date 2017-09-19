@@ -36,7 +36,11 @@ $(document).ready(function(){
           alert('email duplicated!');
           mailcheck = 0;
         }
+<<<<<<< HEAD
         //$(location).attr('href','http://34.209.115.97:3000/mynote/mynotelogin');
+=======
+        //$(location).attr('href','http://35.167.132.166:3000/mynote/mynotelogin');
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
       },
       error:function(error){
         alert('email error');
@@ -69,7 +73,11 @@ $(document).ready(function(){
           alert('nickname duplicated!');
           nickcheck = 0;
         }
+<<<<<<< HEAD
         //$(location).attr('href','http://34.209.115.97:3000/mynote/mynotelogin');
+=======
+        //$(location).attr('href','http://35.167.132.166:3000/mynote/mynotelogin');
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
       },
       error:function(error){
         alert('nickname error!');
@@ -121,7 +129,11 @@ $(document).ready(function(){
             if(result['result']=='success'){
               console.log('ajax success');
             }
+<<<<<<< HEAD
             $(location).attr('href','http://34.209.115.97:3000/mynote/mynotelogin');
+=======
+            $(location).attr('href','http://35.167.132.166:3000/mynote/mynotelogin');
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
           },
           error:function(error){
             alert('entry failed!');

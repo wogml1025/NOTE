@@ -96,5 +96,9 @@ body{
   color:white;
   cursor: pointer;
   outline: 0;
+<<<<<<< HEAD
   margin-bottom: 30px;
+=======
+  margin-bottom: 10px;
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
 }

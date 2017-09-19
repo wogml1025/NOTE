@@ -59,6 +59,7 @@ $(document).ready(function(){
         console.log(error);
       }
     });//ajax {}
+<<<<<<< HEAD
   });//bind {}
 
   var data2={
@@ -104,6 +105,18 @@ function goLogout(){
 }
 function goMypage(){
   $(location).attr('href','http://34.209.115.97:3000/mynote/mynotemypage');
+=======
+
+  });//bind {}
+});//ready {}
+
+function goLogout(){
+  $(location).attr('href','http://35.167.132.166:3000/mynote/mynotemypage/logout');
+  //alert('logout');
+}
+function goMypage(){
+  $(location).attr('href','http://35.167.132.166:3000/mynote/mynotemypage');
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
 }
 function makeNote(){
   var div = document.createElement('div');
@@ -175,7 +188,11 @@ function makeNote(){
       //     if(result['result']=='success'){
       //       console.log('folder delete success');
       //     }
+<<<<<<< HEAD
       //     //$(location).attr('href','http://34.209.115.97:3000/mynote/mynotelogin');
+=======
+      //     //$(location).attr('href','http://35.167.132.166:3000/mynote/mynotelogin');
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
       //   },
       //   error:function(error){
       //     alert('folder delete failed!');
@@ -220,6 +237,7 @@ function showSetting(){
 function hideSetting(){
   document.getElementById('settingModal').style.display='none';
 }
+<<<<<<< HEAD
 function goEditPage(){
   // $(location).attr('href','http://34.209.115.97:3000/mynote/mynoteedit');
   var data = {
@@ -248,6 +266,68 @@ function goEditPage(){
 }
 function gotoShare(){
   $(location).attr('href','http://34.209.115.97:3000/mynote/mynotesharepage');
+=======
+/* 원래 있던 함수 */
+// function goEditPage(){
+//   // $(location).attr('href','http://35.167.132.166:3000/mynote/mynoteedit');
+//   var data = {
+//     'contents' : document.getElementById('contentDiv').innerHTML
+//   }
+//   $.ajax({
+//     type:'POST',
+//     url:'/mynote/goeditpage',
+//     contentType:'application/x-www-form-urlencoded; charset=UTF-8',
+//     cache:false,
+//     dataType:'json',
+//     data:data,
+//     success:function(result){
+//       console.log(result);
+//       if(result['result'] = 'success'){
+//         console.log('success to open edit page');
+//         //alert(window.location.href);
+//         $(location).attr('href','http://35.167.132.166:3000/mynote/mynoteedit');
+//       }
+//     },
+//     error:function(error){
+//       console.log(error);
+//       console.log('failed to open edit page');
+//     }
+//   });
+// }
+// function goEditPage(){
+//   // $(location).attr('href','http://35.167.132.166:3000/mynote/mynoteedit');
+//   var data = {
+//     'contents' : document.getElementById('contentDiv').innerHTML
+//   }
+//   $.ajax({
+//     type:'POST',
+//     url:'/mynote/goeditpage',
+//     contentType:'application/x-www-form-urlencoded; charset=UTF-8',
+//     cache:false,
+//     dataType:'json',
+//     data:data,
+//     success:function(result){
+//       console.log(result);
+//       if(result['result'] = 'success'){
+//         console.log('success to open edit page');
+//         //alert(window.location.href);
+//         $(location).attr('href','http://35.167.132.166:3000/mynote/mynoteedit');
+//       }
+//     },
+//     error:function(error){
+//       console.log(error);
+//       console.log('failed to open edit page');
+//     }
+//   });
+// }
+function goEditPage(){
+  //folder이름 note이름 받아서 http://35.167.132.166:3000/mynote/[nickname]/[foldername]/[notename] 이렇게
+
+}
+
+function gotoShare(){
+  $(location).attr('href','http://35.167.132.166:3000/mynote/mynotesharepage');
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
 }
 function delNote(obj,e){
   var noteDiv = document.getElementById('notePart');
@@ -271,7 +351,11 @@ function delNote(obj,e){
             if(result['result']=='success'){
               console.log('shift to contentpage success with notename');
             }
+<<<<<<< HEAD
             // $(location).attr('href','http://34.209.115.97:3000/mynote/mynoteedit');
+=======
+            // $(location).attr('href','http://35.167.132.166:3000/mynote/mynoteedit');
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
             document.getElementById('modal_showbox').style.display='block';
             document.getElementById('contentDiv').innerHTML = result['content'];
           },

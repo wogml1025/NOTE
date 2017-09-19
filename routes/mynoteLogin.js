@@ -42,7 +42,10 @@ router.post('/mynotelogin',function(req,res,next){
           console.log('same password');
           req.session.authId = user_email;
           req.session.nick = user.nickname;
+<<<<<<< HEAD
           //req.session.count = 1;
+=======
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
           req.session.save(function(){
             console.log('login success');
             console.log(user.nickname);
@@ -57,6 +60,7 @@ router.post('/mynotelogin',function(req,res,next){
   });
   //res.end('{"success" : "Updated Successfully","status" : 200}');
 });
+<<<<<<< HEAD
 
 router.post('/fblogin',function(req,res,next){
   var fbMail = req.body.fbid;
@@ -97,6 +101,8 @@ router.post('/fblogin',function(req,res,next){
     }//else
   });//first query
 });
+=======
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
 //module.exports = router;
 return router;
 }

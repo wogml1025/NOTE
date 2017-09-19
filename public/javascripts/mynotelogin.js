@@ -6,7 +6,11 @@
 $(document).ready(function(){
 
   ///////prevent backspace////////
+<<<<<<< HEAD
   history.pushState(null,null,'http://34.209.115.97:3000/mynote/mynotelogin');
+=======
+  history.pushState(null,null,'http://35.167.132.166:3000/mynote/mynotelogin');
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
   window.onpopstate = function(event){
     history.go(1);
   };
@@ -46,6 +50,7 @@ $(document).ready(function(){
 });
 function goEntryPage()
 {
+<<<<<<< HEAD
   $(location).attr('href', 'http://34.209.115.97:3000/mynote/mynoteentry');
 }
 function goFacebook(){
@@ -53,4 +58,13 @@ function goFacebook(){
 }
 function gotoShare(){
   $(location).attr('href','http://34.209.115.97:3000/mynote/mynotesharepage');
+=======
+  $(location).attr('href', 'http://35.167.132.166:3000/mynote/mynoteentry');
+}
+function goFacebook(){
+  $(location).attr('href', 'http://35.167.132.166:3000/auth/facebook');
+}
+function gotoShare(){
+  $(location).attr('href','http://35.167.132.166:3000/mynote/mynotesharepage');
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
 }

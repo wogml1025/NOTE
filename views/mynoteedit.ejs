@@ -20,17 +20,30 @@
     //toolbar2: "print preview media | forecolor backcolor emoticons | fontselect fontsizeselect",
     toolbar: "fontselect | fontsizeselect | bold italic underline strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify | image media link | charmap bullist numlist table hr | superscript subscript | removeformat | preview newdocument | undo redo",
     extended_valid_elements: "*",
+<<<<<<< HEAD
     //toolbar_items_size: 'small',
+=======
+    // toolbar_items_size: 'small',
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
     width: 1200,
     height: 500,
     relative_urls: false,
     remove_script_host: false,
+<<<<<<< HEAD
+=======
+    convert_urls : true,
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
     branding: false,
     autoresize_bottom_margin: 10,
     statusbar: false,
     paste_data_images: true,
+<<<<<<< HEAD
    paste_as_text: true,
     paste_convert_word_fake_lists: false,
+=======
+  //  paste_as_text: true,
+  //   paste_convert_word_fake_lists: false,
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
     menubar: false,
     forced_root_block: false,
     image_advtab: true,
@@ -49,6 +62,7 @@
         });
       }
     },
+<<<<<<< HEAD
   });
   window.onload=function(){
     var saveBtn = document.getElementById('savebtn');
@@ -96,6 +110,84 @@
     }
 
   }
+=======
+  // enable automatic uploads of images represented by blob or data URIs
+  automatic_uploads: true,
+  images_upload_credentials: true
+  // // URL of our upload handler (for more details check: https://www.tinymce.com/docs/configure/file-image-upload/#images_upload_url)
+  // images_upload_url: 'postAcceptor.php',
+  // // here we add custom filepicker only to Image dialog
+  // file_picker_types: 'image',
+  // // and here's our custom image picker
+  // images_dataimg_filter: function(img) {
+  //   return img.hasAttribute('internal-blob');
+  // },
+  // file_picker_callback: function(cb, value, meta) {
+  //   var input = document.createElement('input');
+  //   input.setAttribute('type', 'file');
+  //   input.setAttribute('accept', 'image/*');
+  //   // Note: In modern browsers input[type="file"] is functional without
+  //   // even adding it to the DOM, but that might not be the case in some older
+  //   // or quirky browsers like IE, so you might want to add it to the DOM
+  //   // just in case, and visually hide it. And do not forget do remove it
+  //   // once you do not need it anymore.
+//     input.onchange = function() {
+//       var file = this.files[0];
+//
+//       var reader = new FileReader();
+//       reader.readAsDataURL(file);
+//       reader.onload = function () {
+//         // Note: Now we need to register the blob in TinyMCEs image blob
+//         // registry. In the next release this part hopefully won't be
+//         // necessary, as we are looking to handle it internally.
+//         var id = 'blobid' + (new Date()).getTime();
+//         var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
+//         var base64 = reader.result.split(',')[1];
+//         var blobInfo = blobCache.create(id, file, base64);
+//         blobCache.add(blobInfo);
+//
+//         // call the callback and populate the Title field with the file name
+//         cb(blobInfo.blobUri(), { title: file.name });
+//       };
+//     };
+//   input.click();
+//   }
+// });
+});
+window.onload=function(){
+  var saveBtn = document.getElementById('savebtn');
+  saveBtn.onclick=function(){
+    tinyMCE.triggerSave();
+    var mcecontent = tinyMCE.activeEditor.getContent();
+    var data={
+      'tinymceContent' : mcecontent
+    }
+    $.ajax({
+      url: '/mynote/mynoteedit',
+      contentType:'application/x-www-form-urlencoded; charset=UTF-8',
+      cache:false,
+      dataType: 'json',
+      type: 'POST',
+      data: data,
+      success: function(result) {
+        alert('editor contents save success!');
+        console.log(result);
+        if(result['result']=='success'){
+          console.log('ajax success');
+          $(location).attr('href', 'http://35.167.132.166:3000/mynote/mynotemynotepage');
+        }
+
+      },
+      error: function(){
+        alert('editor contents save failed!');
+        console.log(limit);
+        console.log('ajax failed');
+      }
+    });
+  }
+
+}
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
 </script>
 </head>
 
@@ -106,12 +198,22 @@
 </div>
   <hr id="border">
   <div id="editor">
+<<<<<<< HEAD
     <textarea name="" id="mytextarea" cols="30" rows="10">
+=======
+    <!-- <textarea name="" id="mytextarea" cols="30" rows="10">
+      <%= content %>
+    </textarea> -->
+    <textarea contenteditable="true" name="" id="mytextarea" cols="30" rows="10">
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
       <%= content %>
     </textarea>
     <input name="image" type="file" id="upload" class="hidden" onchange="">
   </div>
+<<<<<<< HEAD
   <div id='testDiv'></div>
+=======
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
 </body>
 
 </html>

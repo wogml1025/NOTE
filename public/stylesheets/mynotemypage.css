@@ -180,6 +180,7 @@ body{
   color: white;
   word-wrap: break-word;
   border-radius: 2px;
+<<<<<<< HEAD
 
   opacity: 1;
 	-webkit-transition: .3s ease-in-out;
@@ -188,6 +189,8 @@ body{
 .folderInDB:hover{
   opacity: 0.5;
   color:black;
+=======
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
 }
 /*#searchBtnDiv{
   display: inline-block;

@@ -105,6 +105,7 @@ router.post('/sharesearch',function(req,res,next){
   });//query
 });
 
+<<<<<<< HEAD
 router.post('/setsharefolderimage',function(req,res,next){
   var foldername = req.session.foldername;
   var nickname = req.session.nick;
@@ -121,6 +122,8 @@ router.post('/setsharefolderimage',function(req,res,next){
     }
   });
 });
+=======
+>>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
 //module.exports = router;
 return router;
 }

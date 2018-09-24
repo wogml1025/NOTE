@@ -20,30 +20,19 @@
     //toolbar2: "print preview media | forecolor backcolor emoticons | fontselect fontsizeselect",
     toolbar: "fontselect | fontsizeselect | bold italic underline strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify | image media link | charmap bullist numlist table hr | superscript subscript | removeformat | preview newdocument | undo redo",
     extended_valid_elements: "*",
-<<<<<<< HEAD
+
     //toolbar_items_size: 'small',
-=======
-    // toolbar_items_size: 'small',
->>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
     width: 1200,
     height: 500,
     relative_urls: false,
     remove_script_host: false,
-<<<<<<< HEAD
-=======
     convert_urls : true,
->>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
     branding: false,
     autoresize_bottom_margin: 10,
     statusbar: false,
     paste_data_images: true,
-<<<<<<< HEAD
-   paste_as_text: true,
+    paste_as_text: true,
     paste_convert_word_fake_lists: false,
-=======
-  //  paste_as_text: true,
-  //   paste_convert_word_fake_lists: false,
->>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
     menubar: false,
     forced_root_block: false,
     image_advtab: true,
@@ -62,7 +51,6 @@
         });
       }
     },
-<<<<<<< HEAD
   });
   window.onload=function(){
     var saveBtn = document.getElementById('savebtn');
@@ -110,7 +98,6 @@
     }
 
   }
-=======
   // enable automatic uploads of images represented by blob or data URIs
   automatic_uploads: true,
   images_upload_credentials: true
@@ -154,6 +141,7 @@
 //   }
 // });
 });
+
 window.onload=function(){
   var saveBtn = document.getElementById('savebtn');
   saveBtn.onclick=function(){
@@ -181,13 +169,12 @@ window.onload=function(){
       error: function(){
         alert('editor contents save failed!');
         console.log(limit);
-        console.log('ajax failed');
+        console.log('failed');
       }
     });
   }
-
 }
->>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
+
 </script>
 </head>
 
@@ -198,22 +185,19 @@ window.onload=function(){
 </div>
   <hr id="border">
   <div id="editor">
-<<<<<<< HEAD
-    <textarea name="" id="mytextarea" cols="30" rows="10">
-=======
     <!-- <textarea name="" id="mytextarea" cols="30" rows="10">
       <%= content %>
     </textarea> -->
+    
+ 
     <textarea contenteditable="true" name="" id="mytextarea" cols="30" rows="10">
->>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
       <%= content %>
     </textarea>
     <input name="image" type="file" id="upload" class="hidden" onchange="">
   </div>
-<<<<<<< HEAD
+
   <div id='testDiv'></div>
-=======
->>>>>>> 147a31c46d008e654ad781eab62aa725ad9ea51b
+
 </body>
 
 </html>
